@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 const TodoListScreen = () => {
     const [todos, setTodos] = useState([]);
     const [isModalVisible, setIsModalVisible] = useState(false);
-    const [isRefreshing, setIsRefreshing] = useState(false); // New state for refresh
+    const [isRefreshing, setIsRefreshing] = useState(false);
     const navigation = useNavigation();
 
     useEffect(() => {
@@ -17,10 +17,10 @@ const TodoListScreen = () => {
     }, []);
 
     const refreshTodoList = () => {
-        setIsRefreshing(true); // Set refreshing state to true
+        setIsRefreshing(true);
         TodoListController.getAllTodos((todos) => {
             setTodos(todos);
-            setIsRefreshing(false); // Set refreshing state to false after fetching
+            setIsRefreshing(false);
         });
     };
 
@@ -57,8 +57,8 @@ const TodoListScreen = () => {
                     <TodoListItem todo={item} onDelete={handleDeleteTodo} />
                 )}
                 ListEmptyComponent={() => <Text>No todos available</Text>}
-                refreshing={isRefreshing} // Set refreshing state
-                onRefresh={refreshList} // Call refreshList on swipe down
+                refreshing={isRefreshing}
+                onRefresh={refreshList}
             />
             <View style={styles.buttonContainer}>
                 <TouchableOpacity
