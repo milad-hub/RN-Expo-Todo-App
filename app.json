@@ -31,6 +31,8 @@
       "eas": {
         "projectId": "57eeea96-16e9-4d97-950c-cc975f53db35"
       }
-    }
-  }
+    },
+    "sdkVersion": "49.0.0"
+  },
+  "name": "todo-app"
 }
